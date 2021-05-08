@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Oline_ExamModelStoreContainer" CdmEntityContainer="Online_Exame">
+    <EntitySetMapping Name="Choices">
+      <EntityTypeMapping TypeName="Oline_ExamModel.Choice">
+        <MappingFragment StoreEntitySet="Choice">
+          <ScalarProperty Name="ch_id" ColumnName="ch_id" />
+          <ScalarProperty Name="Quset_id" ColumnName="Quset_id" />
+          <ScalarProperty Name="choices" ColumnName="choices" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="courses">
+      <EntityTypeMapping TypeName="Oline_ExamModel.course">
+        <MappingFragment StoreEntitySet="course">
+          <ScalarProperty Name="C_id" ColumnName="C_id" />
+          <ScalarProperty Name="C_name" ColumnName="C_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="Oline_ExamModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+          <ScalarProperty Name="Dept_name" ColumnName="Dept_name" />
+          <ScalarProperty Name="Dept_manger" ColumnName="Dept_manger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exams">
+      <EntityTypeMapping TypeName="Oline_ExamModel.Exam">
+        <MappingFragment StoreEntitySet="Exam">
+          <ScalarProperty Name="Ex_id" ColumnName="Ex_id" />
+          <ScalarProperty Name="Ex_Des" ColumnName="Ex_Des" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="C_id" ColumnName="C_id" />
+          <ScalarProperty Name="MC" ColumnName="MC" />
+          <ScalarProperty Name="T_F" ColumnName="T/F" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Instractors">
+      <EntityTypeMapping TypeName="Oline_ExamModel.Instractor">
+        <MappingFragment StoreEntitySet="Instractor">
+          <ScalarProperty Name="Ins_id" ColumnName="Ins_id" />
+          <ScalarProperty Name="Ins_fname" ColumnName="Ins_fname" />
+          <ScalarProperty Name="Ins_lname" ColumnName="Ins_lname" />
+          <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="Oline_ExamModel.Question">
+        <MappingFragment StoreEntitySet="Question">
+          <ScalarProperty Name="Quest_id" ColumnName="Quest_id" />
+          <ScalarProperty Name="CorectAnswer" ColumnName="CorectAnswer" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Qustion" ColumnName="Qustion" />
+          <ScalarProperty Name="Crs_id" ColumnName="Crs_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="Oline_ExamModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="St_id" ColumnName="St_id" />
+          <ScalarProperty Name="St_fname" ColumnName="St_fname" />
+          <ScalarProperty Name="St_lname" ColumnName="St_lname" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student_Exam">
+      <EntityTypeMapping TypeName="Oline_ExamModel.Student_Exam">
+        <MappingFragment StoreEntitySet="Student_Exam">
+          <ScalarProperty Name="St_id" ColumnName="St_id" />
+          <ScalarProperty Name="Q_id" ColumnName="Q_id" />
+          <ScalarProperty Name="Ex_id" ColumnName="Ex_id" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="St_answer" ColumnName="St_answer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Oline_ExamModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Topics">
+      <EntityTypeMapping TypeName="Oline_ExamModel.Topic">
+        <MappingFragment StoreEntitySet="Topic">
+          <ScalarProperty Name="T_id" ColumnName="T_id" />
+          <ScalarProperty Name="C_id" ColumnName="C_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="course_Instractor" TypeName="Oline_ExamModel.course_Instractor" StoreEntitySet="course_Instractor">
+      <EndProperty Name="course">
+        <ScalarProperty Name="C_id" ColumnName="C_id" />
+      </EndProperty>
+      <EndProperty Name="Instractor">
+        <ScalarProperty Name="Ins_id" ColumnName="Ins_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Student_course" TypeName="Oline_ExamModel.Student_course" StoreEntitySet="Student_course">
+      <EndProperty Name="course">
+        <ScalarProperty Name="C_id" ColumnName="C_id" />
+      </EndProperty>
+      <EndProperty Name="Student">
+        <ScalarProperty Name="St_id" ColumnName="St_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionName="Oline_ExamModel.Store.correctAns" FunctionImportName="correctAns">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.correctAns_Result">
+          <ScalarProperty Name="RN" ColumnName="RN" />
+          <ScalarProperty Name="Q_id" ColumnName="Q_id" />
+          <ScalarProperty Name="CorectAnswer" ColumnName="CorectAnswer" />
+          <ScalarProperty Name="St_answer" ColumnName="St_answer" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Oline_ExamModel.Store.Examcourse" FunctionImportName="Examcourse">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.Examcourse_Result">
+          <ScalarProperty Name="St_id" ColumnName="St_id" />
+          <ScalarProperty Name="Ex_id" ColumnName="Ex_id" />
+          <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Oline_ExamModel.Store.studentExamCourse" FunctionImportName="studentExamCourse">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.studentExamCourse_Result">
+          <ScalarProperty Name="St_Name" ColumnName="St_Name" />
+          <ScalarProperty Name="Ex_id" ColumnName="Ex_id" />
+          <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Add_Course_instractor" FunctionName="Oline_ExamModel.Store.Add_Course_instractor" />
+    <FunctionImportMapping FunctionImportName="Delete_course_instractor" FunctionName="Oline_ExamModel.Store.Delete_course_instractor" />
+    <FunctionImportMapping FunctionImportName="deleteCourse" FunctionName="Oline_ExamModel.Store.deleteCourse" />
+    <FunctionImportMapping FunctionImportName="deleteDepartment" FunctionName="Oline_ExamModel.Store.deleteDepartment" />
+    <FunctionImportMapping FunctionImportName="deleteExam" FunctionName="Oline_ExamModel.Store.deleteExam" />
+    <FunctionImportMapping FunctionImportName="deleteInstructor" FunctionName="Oline_ExamModel.Store.deleteInstructor" />
+    <FunctionImportMapping FunctionImportName="deleteQuestion" FunctionName="Oline_ExamModel.Store.deleteQuestion" />
+    <FunctionImportMapping FunctionImportName="deleteStudent" FunctionName="Oline_ExamModel.Store.deleteStudent" />
+    <FunctionImportMapping FunctionImportName="deleteStudentExam" FunctionName="Oline_ExamModel.Store.deleteStudentExam" />
+    <FunctionImportMapping FunctionImportName="deleteTopic" FunctionName="Oline_ExamModel.Store.deleteTopic" />
+    <FunctionImportMapping FunctionImportName="ExamAnswers" FunctionName="Oline_ExamModel.Store.ExamAnswers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.ExamAnswers_Result">
+          <ScalarProperty Name="St_id" ColumnName="St_id" />
+          <ScalarProperty Name="Q_id" ColumnName="Q_id" />
+          <ScalarProperty Name="St_answer" ColumnName="St_answer" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ExamCorrection" FunctionName="Oline_ExamModel.Store.ExamCorrection">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.ExamCorrection_Result">
+          <ScalarProperty Name="St_id" ColumnName="St_id" />
+          <ScalarProperty Name="Ex_id" ColumnName="Ex_id" />
+          <ScalarProperty Name="Q_id" ColumnName="Q_id" />
+          <ScalarProperty Name="CorectAnswer" ColumnName="CorectAnswer" />
+          <ScalarProperty Name="St_answer" ColumnName="St_answer" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ExamRes" FunctionName="Oline_ExamModel.Store.ExamRes" />
+    <FunctionImportMapping FunctionImportName="Examresults" FunctionName="Oline_ExamModel.Store.Examresults">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.Examresults_Result">
+          <ScalarProperty Name="Student_Full_Name" ColumnName="Student Full Name" />
+          <ScalarProperty Name="Ex_Des" ColumnName="Ex_Des" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="C_name" ColumnName="C_name" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GenerateExam" FunctionName="Oline_ExamModel.Store.GenerateExam" />
+    <FunctionImportMapping FunctionImportName="get_AllGrades_student" FunctionName="Oline_ExamModel.Store.get_AllGrades_student" />
+    <FunctionImportMapping FunctionImportName="Get_course_instructor" FunctionName="Oline_ExamModel.Store.Get_course_instructor" />
+    <FunctionImportMapping FunctionImportName="get_course_instructors" FunctionName="Oline_ExamModel.Store.get_course_instructors" />
+    <FunctionImportMapping FunctionImportName="Get_insid_by_inname" FunctionName="Oline_ExamModel.Store.Get_insid_by_inname" />
+    <FunctionImportMapping FunctionImportName="Get_instructor_by_deptId" FunctionName="Oline_ExamModel.Store.Get_instructor_by_deptId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.Get_instructor_by_deptId_Result">
+          <ScalarProperty Name="Ins_id" ColumnName="Ins_id" />
+          <ScalarProperty Name="Ins_fname" ColumnName="Ins_fname" />
+          <ScalarProperty Name="Ins_lname" ColumnName="Ins_lname" />
+          <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="get_instructor_course" FunctionName="Oline_ExamModel.Store.get_instructor_course" />
+    <FunctionImportMapping FunctionImportName="Get_instructorid_by_crsid" FunctionName="Oline_ExamModel.Store.Get_instructorid_by_crsid" />
+    <FunctionImportMapping FunctionImportName="getAllcourses" FunctionName="Oline_ExamModel.Store.getAllcourses">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.getAllcourses_Result">
+          <ScalarProperty Name="C_id" ColumnName="C_id" />
+          <ScalarProperty Name="C_name" ColumnName="C_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getallDepartement" FunctionName="Oline_ExamModel.Store.getallDepartement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.getallDepartement_Result">
+          <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+          <ScalarProperty Name="Dept_name" ColumnName="Dept_name" />
+          <ScalarProperty Name="Dept_manger" ColumnName="Dept_manger" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getAllExamsInCourse" FunctionName="Oline_ExamModel.Store.getAllExamsInCourse">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.getAllExamsInCourse_Result">
+          <ScalarProperty Name="Ex_id" ColumnName="Ex_id" />
+          <ScalarProperty Name="Ex_Des" ColumnName="Ex_Des" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="C_id" ColumnName="C_id" />
+          <ScalarProperty Name="MC" ColumnName="MC" />
+          <ScalarProperty Name="T_F" ColumnName="T/F" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getAllInstructors" FunctionName="Oline_ExamModel.Store.getAllInstructors">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.getAllInstructors_Result">
+          <ScalarProperty Name="Ins_id" ColumnName="Ins_id" />
+          <ScalarProperty Name="Ins_fname" ColumnName="Ins_fname" />
+          <ScalarProperty Name="Ins_lname" ColumnName="Ins_lname" />
+          <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getAllstudentExam" FunctionName="Oline_ExamModel.Store.getAllstudentExam">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.getAllstudentExam_Result">
+          <ScalarProperty Name="St_id" ColumnName="St_id" />
+          <ScalarProperty Name="Q_id" ColumnName="Q_id" />
+          <ScalarProperty Name="Ex_id" ColumnName="Ex_id" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="St_answer" ColumnName="St_answer" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getAllstudents" FunctionName="Oline_ExamModel.Store.getAllstudents" />
+    <FunctionImportMapping FunctionImportName="getAlltopics" FunctionName="Oline_ExamModel.Store.getAlltopics">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.getAlltopics_Result">
+          <ScalarProperty Name="T_id" ColumnName="T_id" />
+          <ScalarProperty Name="C_id" ColumnName="C_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCoursebyId" FunctionName="Oline_ExamModel.Store.GetCoursebyId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.GetCoursebyId_Result">
+          <ScalarProperty Name="C_id" ColumnName="C_id" />
+          <ScalarProperty Name="C_name" ColumnName="C_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetcourseInstructor" FunctionName="Oline_ExamModel.Store.GetcourseInstructor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.GetcourseInstructor_Result">
+          <ScalarProperty Name="Ins_id" ColumnName="Ins_id" />
+          <ScalarProperty Name="Ins_fname" ColumnName="Ins_fname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getCourses_Student" FunctionName="Oline_ExamModel.Store.getCourses_Student" />
+    <FunctionImportMapping FunctionImportName="getCourses_TOpic" FunctionName="Oline_ExamModel.Store.getCourses_TOpic" />
+    <FunctionImportMapping FunctionImportName="getCoursesByDeptID" FunctionName="Oline_ExamModel.Store.getCoursesByDeptID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.getCoursesByDeptID_Result">
+          <ScalarProperty Name="C_id" ColumnName="C_id" />
+          <ScalarProperty Name="C_name" ColumnName="C_name" />
+          <ScalarProperty Name="Ins_Name" ColumnName="Ins Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDeptbyId" FunctionName="Oline_ExamModel.Store.GetDeptbyId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.GetDeptbyId_Result">
+          <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+          <ScalarProperty Name="Dept_name" ColumnName="Dept_name" />
+          <ScalarProperty Name="Dept_manger" ColumnName="Dept_manger" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getExam_Question" FunctionName="Oline_ExamModel.Store.getExam_Question">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.getExam_Question_Result">
+          <ScalarProperty Name="Quest_Id" ColumnName="Quest_Id" />
+          <ScalarProperty Name="Qustion" ColumnName="Qustion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getExam_Question_Answer" FunctionName="Oline_ExamModel.Store.getExam_Question_Answer" />
+    <FunctionImportMapping FunctionImportName="getInsCourses" FunctionName="Oline_ExamModel.Store.getInsCourses">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.getInsCourses_Result">
+          <ScalarProperty Name="C_id" ColumnName="C_id" />
+          <ScalarProperty Name="C_name" ColumnName="C_name" />
+          <ScalarProperty Name="Ins_id" ColumnName="Ins_id" />
+          <ScalarProperty Name="Ins_fname" ColumnName="Ins_fname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getInstractor" FunctionName="Oline_ExamModel.Store.getInstractor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.getInstractor_Result">
+          <ScalarProperty Name="Ins_id" ColumnName="Ins_id" />
+          <ScalarProperty Name="Ins_fname" ColumnName="Ins_fname" />
+          <ScalarProperty Name="Ins_lname" ColumnName="Ins_lname" />
+          <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getInstractor_Course" FunctionName="Oline_ExamModel.Store.getInstractor_Course" />
+    <FunctionImportMapping FunctionImportName="getInstructorByid" FunctionName="Oline_ExamModel.Store.getInstructorByid">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.getInstructorByid_Result">
+          <ScalarProperty Name="Ins_id" ColumnName="Ins_id" />
+          <ScalarProperty Name="Ins_fname" ColumnName="Ins_fname" />
+          <ScalarProperty Name="Ins_lname" ColumnName="Ins_lname" />
+          <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getInstructorperDept" FunctionName="Oline_ExamModel.Store.getInstructorperDept">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.getInstructorperDept_Result">
+          <ScalarProperty Name="Ins_id" ColumnName="Ins_id" />
+          <ScalarProperty Name="Ins_fname" ColumnName="Ins_fname" />
+          <ScalarProperty Name="Ins_lname" ColumnName="Ins_lname" />
+          <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetStudentbyId" FunctionName="Oline_ExamModel.Store.GetStudentbyId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.GetStudentbyId_Result">
+          <ScalarProperty Name="St_id" ColumnName="St_id" />
+          <ScalarProperty Name="St_fname" ColumnName="St_fname" />
+          <ScalarProperty Name="St_lname" ColumnName="St_lname" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getStudentCourse" FunctionName="Oline_ExamModel.Store.getStudentCourse">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.getStudentCourse_Result">
+          <ScalarProperty Name="St_id" ColumnName="St_id" />
+          <ScalarProperty Name="C_id" ColumnName="C_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getstudentExam" FunctionName="Oline_ExamModel.Store.getstudentExam">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.getstudentExam_Result">
+          <ScalarProperty Name="St_id" ColumnName="St_id" />
+          <ScalarProperty Name="Q_id" ColumnName="Q_id" />
+          <ScalarProperty Name="Ex_id" ColumnName="Ex_id" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="St_answer" ColumnName="St_answer" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertNewCourse" FunctionName="Oline_ExamModel.Store.InsertNewCourse" />
+    <FunctionImportMapping FunctionImportName="InsertNewDepartement" FunctionName="Oline_ExamModel.Store.InsertNewDepartement" />
+    <FunctionImportMapping FunctionImportName="insertNewStudent" FunctionName="Oline_ExamModel.Store.insertNewStudent" />
+    <FunctionImportMapping FunctionImportName="NewChoice" FunctionName="Oline_ExamModel.Store.NewChoice" />
+    <FunctionImportMapping FunctionImportName="NewExam" FunctionName="Oline_ExamModel.Store.NewExam" />
+    <FunctionImportMapping FunctionImportName="NewInstructor" FunctionName="Oline_ExamModel.Store.NewInstructor" />
+    <FunctionImportMapping FunctionImportName="Newquestion" FunctionName="Oline_ExamModel.Store.Newquestion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.Newquestion_Result">
+          <ScalarProperty Name="Quest_id" ColumnName="Quest_id" />
+          <ScalarProperty Name="CorectAnswer" ColumnName="CorectAnswer" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Qustion" ColumnName="Qustion" />
+          <ScalarProperty Name="Crs_id" ColumnName="Crs_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NewStudentExam" FunctionName="Oline_ExamModel.Store.NewStudentExam" />
+    <FunctionImportMapping FunctionImportName="NewTopic" FunctionName="Oline_ExamModel.Store.NewTopic" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Oline_ExamModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Oline_ExamModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Oline_ExamModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Oline_ExamModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Oline_ExamModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Oline_ExamModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Oline_ExamModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Oline_ExamModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="UpdateChoice" FunctionName="Oline_ExamModel.Store.UpdateChoice" />
+    <FunctionImportMapping FunctionImportName="UpdateCourse" FunctionName="Oline_ExamModel.Store.UpdateCourse" />
+    <FunctionImportMapping FunctionImportName="UpdateCourseInstructor" FunctionName="Oline_ExamModel.Store.UpdateCourseInstructor" />
+    <FunctionImportMapping FunctionImportName="UpdateDepartment" FunctionName="Oline_ExamModel.Store.UpdateDepartment" />
+    <FunctionImportMapping FunctionImportName="UpdateExam" FunctionName="Oline_ExamModel.Store.UpdateExam" />
+    <FunctionImportMapping FunctionImportName="UpdateInstractor" FunctionName="Oline_ExamModel.Store.UpdateInstractor" />
+    <FunctionImportMapping FunctionImportName="UpdateQuestion" FunctionName="Oline_ExamModel.Store.UpdateQuestion" />
+    <FunctionImportMapping FunctionImportName="UpdateStudent" FunctionName="Oline_ExamModel.Store.UpdateStudent" />
+    <FunctionImportMapping FunctionImportName="UpdateStudentCourse" FunctionName="Oline_ExamModel.Store.UpdateStudentCourse" />
+    <FunctionImportMapping FunctionImportName="UpdateStudentExam" FunctionName="Oline_ExamModel.Store.UpdateStudentExam" />
+    <FunctionImportMapping FunctionImportName="UpdateTopic" FunctionName="Oline_ExamModel.Store.UpdateTopic" />
+  </EntityContainerMapping>
+</Mapping>
